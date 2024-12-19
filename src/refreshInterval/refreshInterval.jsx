@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react"
-
+import "./style.css"
 export function RefreshInterval() {
     const [data, setData] = useState(null);
     const [trigger, setTrigger] = useState(0);
