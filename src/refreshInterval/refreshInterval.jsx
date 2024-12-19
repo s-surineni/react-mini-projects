@@ -23,6 +23,9 @@ export function RefreshInterval() {
                 setData((response))
             })
             .catch(err => console.console.warn(err));
+
+                // Clean up for unmount to prevent memory leak
+            return () => clearInterval(fetchDataInterval.current);
     }, [trigger]);
     return (
         <>
