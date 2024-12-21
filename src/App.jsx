@@ -1,11 +1,11 @@
 import './App.css'
-import { RefreshInterval } from './refreshInterval/refreshInterval'
+import AppRouter from './AppRouter/AppRouter'
 
 function App() {
 
   return (
     <>
-      <RefreshInterval />
+      <AppRouter />
     </>
   )
 }

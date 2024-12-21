@@ -1,7 +1,10 @@
+import EmployeeControls from "../employeeControls/employeeControls";
+import EmployeeList from "../employeeList/employeeList";
 export default function Employee() {
     return (
         <>
-            <h1>Employee</h1>
+            <EmployeeControls />
+            <EmployeeList />
         </>
     )
 }
