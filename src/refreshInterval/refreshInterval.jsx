@@ -22,7 +22,7 @@ export default function RefreshInterval() {
                 console.log(response)
                 setData((response))
             })
-            .catch(err => console.console.warn(err));
+            .catch(err => console.warn(err));
 
                 // Clean up for unmount to prevent memory leak
             return () => clearInterval(fetchDataInterval.current);
@@ -31,7 +31,7 @@ export default function RefreshInterval() {
         <>
             <h1>Refresh Interval</h1>
             <div>
-                <select defaultValue="0" onChange={(e) => setFetchDataInterval(e.target.value)}>
+                <select defaultValue="0" onChange={(e) => setFetchDataInterval(Number(e.target.value))}>
                     <option value="0">Auto Refresh: OFF</option>
                     <option value="5000">5 seconds</option>
                     <option value="15000">15 seconds</option>
