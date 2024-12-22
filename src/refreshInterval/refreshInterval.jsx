@@ -1,36 +1,16 @@
-import { useEffect, useState, useRef } from "react"
+import { useState } from "react"
 import "./style.css"
+import ShowPicture from "../ShowPicture/ShowPicture";
 export default function RefreshInterval() {
-    const [data, setData] = useState(null);
-    const [trigger, setTrigger] = useState(0);
-    const fetchDataInterval = useRef();
+    const [interval, setInterval] = useState(0);
     const setFetchDataInterval = (value) => {
-        if (fetchDataInterval.current) {
-            clearInterval(fetchDataInterval.current);
-            fetchDataInterval.current = null;
-        }
-        if (value > 0) {
-            fetchDataInterval.current = setInterval(() => {
-                setTrigger(Date.now());
-            }, value);
-        }
-    }
-    useEffect(() => {
-        fetch('https://random.dog/woof.json')
-            .then(async res => {
-                const response = await res.json();
-                console.log(response)
-                setData((response))
-            })
-            .catch(err => console.warn(err));
+        setInterval(value);
 
-                // Clean up for unmount to prevent memory leak
-            // return () => {
-            //     clearInterval(fetchDataInterval.current)
-            // };
-    }, [trigger]);
+    }
+
     return (
         <>
+            <ShowPicture interval={interval} />
             <h1>Refresh Interval</h1>
             <div>
                 <select defaultValue="0" onChange={(e) => setFetchDataInterval(Number(e.target.value))}>
@@ -41,7 +21,7 @@ export default function RefreshInterval() {
                     <option value="60000">1 minute</option>
                 </select >
             </div >
-            <img className="dog-image" src={data && data.url} alt="dog image" />
+
         </>
     )
 }
