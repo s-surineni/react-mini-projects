@@ -1,20 +1,31 @@
 import './styles.css'
 import PropTypes from 'prop-types'
-export default function EmployeeList({ employeeData }) {
+export default function EmployeeList({ employeeData, checkboxState, setCheckboxState }) {
     return (
         <>
             <h1>Employee List</h1>
             <table>
                 <thead>
                     <tr>
+                        <th>Select All</th>
                         <th>Id</th>
                         <th>Name</th>
                         <th>Title</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {(() => {
+                        const res = [];
+                        for (var i = 0; i < employeeData.length; i++) {
+                            res.push(<h1>Hi ironman</h1>);
+                        }
+                        return res;
+                    })()
+                    }
                     {employeeData.map((employee) => (
                         <tr key={employee.id}>
+                            <td><input type="checkbox"
+                                checked={checkboxState[employee.id - 1]} /></td>
                             <td>{employee.id}</td>
                             <td>{employee.name}</td>
                             <td>{employee.title}</td>
