@@ -1,6 +1,11 @@
 import './styles.css'
 import PropTypes from 'prop-types'
 export default function EmployeeList({ employeeData, checkboxState, setCheckboxState }) {
+    const handleCheckboxChange = (idx) => {
+        const newCheckboxState = [...checkboxState];
+        newCheckboxState[idx] = !newCheckboxState[idx];
+        setCheckboxState(newCheckboxState);
+    }
     return (
         <>
             <h1>Employee List</h1>
@@ -22,10 +27,11 @@ export default function EmployeeList({ employeeData, checkboxState, setCheckboxS
                         return res;
                     })()
                     }
-                    {employeeData.map((employee) => (
+                    {employeeData.map((employee, idx) => (
                         <tr key={employee.id}>
                             <td><input type="checkbox"
-                                checked={checkboxState[employee.id - 1]} /></td>
+                            onChange={() => handleCheckboxChange(idx)}
+                                checked={checkboxState[idx]} /></td>
                             <td>{employee.id}</td>
                             <td>{employee.name}</td>
                             <td>{employee.title}</td>
