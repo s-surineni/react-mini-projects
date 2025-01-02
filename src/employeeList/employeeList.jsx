@@ -19,14 +19,6 @@ export default function EmployeeList({ employeeData, checkboxState, setCheckboxS
                     </tr>
                 </thead>
                 <tbody>
-                    {(() => {
-                        const res = [];
-                        for (var i = 0; i < employeeData.length; i++) {
-                            res.push(<h1>Hi ironman</h1>);
-                        }
-                        return res;
-                    })()
-                    }
                     {employeeData.map((employee, idx) => (
                         <tr key={employee.id}>
                             <td><input type="checkbox"

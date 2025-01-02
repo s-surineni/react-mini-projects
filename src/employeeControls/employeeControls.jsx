@@ -1,7 +1,7 @@
-export default function EmployeeControls() {
+export default function EmployeeControls({deleteSelected}) {
     return (
         <>
-            <button>Delete</button>
+            <button onClick={deleteSelected}>Delete</button>
             <button>Insert</button>
         </>
     )
