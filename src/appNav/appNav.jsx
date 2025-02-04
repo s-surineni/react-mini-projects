@@ -6,6 +6,7 @@ export default function AppNav() {
             <NavLink to="/refresh">Refresh</NavLink>
             <NavLink to="/employee">Employee</NavLink>
             <NavLink to="/accordion">Accordion</NavLink>
+            <NavLink to="/login1">Login1</NavLink>
         </nav>
     )
 }
