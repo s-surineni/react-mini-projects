@@ -1,6 +1,6 @@
 import  { useState, useEffect } from "react";
 import ProgressBar2 from "../ProgressBar2/ProgressBar2";
-
+// https://github.com/KaterinaLupacheva/simple-progress-bar
 function ProgressBarSample2() {
     const [completed, setCompleted] = useState(0);
 
