@@ -1,6 +1,18 @@
 .container {
     background-color: #e0e0de;
     height: 20px;
-    border-radius: 50%;
+    border-radius: 50px;
     width: 100%;
+}
+
+.completed-bar {
+    text-align: right;
+    background-color: blue;
+    border-radius: inherit;
+    color: white;
+    font-weight: bold;
+}
+
+.completed-label {
+    padding: 5px;
 }
