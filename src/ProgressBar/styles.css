@@ -11,8 +11,11 @@
     border-radius: inherit;
     color: white;
     font-weight: bold;
+    transition: width 1s ease-in-out;
 }
 
 .completed-label {
+    /* todo difference between adding padding and margin */
     padding: 5px;
+    /* margin: 5px; */
 }
