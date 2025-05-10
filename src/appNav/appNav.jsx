@@ -9,6 +9,7 @@ export default function AppNav() {
             <NavLink to="/login1">Login1</NavLink>
             <NavLink to="/progressbar2">Progressbar2</NavLink>
             <NavLink to="/progressbar">Progressbar</NavLink>
+            <NavLink to="/fileSystem">FileSystem</NavLink>
         </nav>
     )
 }
