@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 
 export default function RenderOrder() {
     const [val, setVal] = useState(0);
@@ -6,10 +6,13 @@ export default function RenderOrder() {
         setVal(val + 1);
     }, []);
     console.log('ironman App', val)
-    return (<div>Render Order
-        <A />
-        <C />
-    </div>)
+    return (
+        <div>
+            Render Order
+            <A />
+            <C />
+        </div>
+    )
 }
 
 function A() {
@@ -17,10 +20,10 @@ function A() {
     return <B />
 }
 
-function B() {
+const B = memo(function B() {
     console.log('Ironman B');
     return <div>B</div>
-}
+});
 
 function C() {
     console.log('Ironman C');
