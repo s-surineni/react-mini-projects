@@ -1,5 +1,11 @@
+import { useEffect, useState } from "react";
+
 export default function RenderOrder() {
-    console.log('ironman App')
+    const [val, setVal] = useState(0);
+    useEffect(() => {
+        setVal(val + 1);
+    }, []);
+    console.log('ironman App', val)
     return (<div>Render Order
         <A />
         <C />
