@@ -11,6 +11,7 @@ export default function AppNav() {
             <NavLink to="/progressbar">Progressbar</NavLink>
             <NavLink to="/fileSystem">FileSystem</NavLink>
             <NavLink to="/render-order">Render Order</NavLink>
+            <NavLink to="/use-memo">Use Memo</NavLink>
         </nav>
     )
 }
