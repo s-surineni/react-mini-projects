@@ -12,6 +12,7 @@ export default function AppNav() {
             <NavLink to="/fileSystem">FileSystem</NavLink>
             <NavLink to="/render-order">Render Order</NavLink>
             <NavLink to="/use-memo">Use Memo</NavLink>
+            <NavLink to="/promise">Promise</NavLink>
         </nav>
     )
 }

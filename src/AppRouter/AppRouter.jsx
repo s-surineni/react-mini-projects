@@ -8,6 +8,7 @@ import ProgressBarSample from '../ProgressBarSample/ProgressBarSample'
 import FileSystem from '../FileSystem/FileSystem'
 import RenderOrder from '../RenderOrder/RenderOrder'
 import UseMemoSample from '../UseMemoSample/UseMemoSample'
+import PromiseSample from '../PromiseSample/PromiseSample'
 function AppRouter() {
     return (
         
@@ -21,6 +22,7 @@ function AppRouter() {
                 <Route path="/fileSystem" element={<FileSystem />} />
                 <Route path="/render-order" element={<RenderOrder />} />
                 <Route path="/use-memo" element={<UseMemoSample />} />
+                <Route path="/promise" element={<PromiseSample />} />
             </Routes>
     )
 }
