@@ -1,0 +1,15 @@
+{
+  "users": [
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" }
+  ],
+  "addresses": [
+    { "id": 1, "userId": 1, "street": "123 Main St", "city": "Springfield", "state": "IL", "zip": "62701" },
+    { "id": 2, "userId": 2, "street": "456 Oak Ave", "city": "Greenville", "state": "TX", "zip": "75401" }
+  ],
+  "orders": [
+    { "id": 1, "userId": 1, "item": "Laptop", "amount": 1200, "status": "shipped" },
+    { "id": 2, "userId": 1, "item": "Mouse", "amount": 25, "status": "delivered" },
+    { "id": 3, "userId": 2, "item": "Keyboard", "amount": 45, "status": "processing" }
+  ]
+}
