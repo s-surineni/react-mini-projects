@@ -14,6 +14,7 @@ export default function AppNav() {
             <NavLink to="/use-memo">Use Memo</NavLink>
             <NavLink to="/promise">Promise</NavLink>
             <NavLink to="/username-input">Username Input</NavLink>
+            <NavLink to="/counter-non-functional">Counter Non-Functional</NavLink>
         </nav>
     )
 }
