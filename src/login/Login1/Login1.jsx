@@ -6,11 +6,11 @@ function Login1() {
       <h2>Login</h2>
       <form>
         <div className="user-box">
-          <input type="text" id="username" pattern="[a-z]+"></input>
+          <input type="text" id="username" pattern="[a-z]+" required></input>
           <label htmlFor="username">Username</label>
         </div>
         <div className="user-box">
-          <input type="password" id="password" pattern="[a-z]+"></input>
+          <input type="password" id="password" pattern="[a-z]+" required></input>
           <label htmlFor="password">Password</label>
         </div>
       </form>
