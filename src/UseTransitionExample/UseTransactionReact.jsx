@@ -4,7 +4,6 @@ import { startTransition } from "react";
 export default function App({}) {
   const [quantity, setQuantity] = useState(1);
   const [isPending, startTransition] = useTransition();
-  const [isLoading, setIsLoading] = useState(false);
 
   const updateQuantityAction = async newQuantity => {
     // To access the pending state of a transition,
@@ -17,39 +16,24 @@ export default function App({}) {
     });
   };
 
-  // New function that updates quantity without useTransition
-  const updateQuantityWithoutTransition = async (newQuantity) => {
-    setIsLoading(true);
-    try {
-      const savedQuantity = await updateQuantity(newQuantity);
-      setQuantity(savedQuantity);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div>
       <h1>Checkout</h1>
-      {/* <Item action={updateQuantityAction}/> */}
-      <Item action={updateQuantityWithoutTransition}/>
+      <Item action={updateQuantityAction}/>
       <hr />
-      <Total quantity={quantity} isPending={isPending || isLoading} />
+      <Total quantity={quantity} isPending={isPending} />
     </div>
   );
 }
+
+
 function Item({action}) {
   function handleChange(event) {
-    action(event.target.value);
+    // To expose an action prop, await the callback in startTransition.
+    startTransition(async () => {
+      await action(event.target.value);
+    })
   }
-
-  // function handleChange(event) {
-  //   // To expose an action prop, await the callback in startTransition.
-  //   startTransition(async () => {
-  //     await action(event.target.value);
-  //   })
-  // }
-  
   return (
     <div className="item">
       <span>Eras Tour Tickets</span>
@@ -63,30 +47,29 @@ function Item({action}) {
     </div>
   )
 }
-  
 
-  const intl = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD"
-  });
-  
+const intl = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD"
+});
+
 function Total({quantity, isPending}) {
-    return (
-      <div className="total">
-        <span>Total:</span>
-        <span>
-          {isPending ? "🌀 Updating..." : `${intl.format(quantity * 9999)}`}
-        </span>
-      </div>
-    )
-  }
+  return (
+    <div className="total">
+      <span>Total:</span>
+      <span>
+        {isPending ? "🌀 Updating..." : `${intl.format(quantity * 9999)}`}
+      </span>
+    </div>
+  )
+}
 
-  function updateQuantity(newQuantity) {
-    return new Promise((resolve, reject) => {
-      // Simulate a slow network request.
-      setTimeout(() => {
-        resolve(newQuantity);
-      }, 5000);
-    });
-  }
+async function updateQuantity(newQuantity) {
+  return new Promise((resolve, reject) => {
+    // Simulate a slow network request.
+    setTimeout(() => {
+      resolve(newQuantity);
+    }, 2000);
+  });
+}
 

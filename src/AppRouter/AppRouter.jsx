@@ -11,9 +11,8 @@ import UseMemoSample from '../UseMemoSample/UseMemoSample'
 import PromiseSample from '../PromiseSample/PromiseSample'
 import UsernameInput from '../components/UsernameInput'
 import CounterNonFunctional from '../components/CounterNonFunctional'
-import UseTransitionExample from '../UseTransitionExample/UseTransitionExample'
-import UseTransitionExampleWithoutTransition from '../UseTransitionExample/UseTransitionExampleWithoutTransition'
 import UseTransactionReact from '../UseTransitionExample/UseTransactionReact'
+import WithouUseTransitionReact from '../UseTransitionExample/WithouUseTransitionReact'
 
 function AppRouter() {
     return (
@@ -30,9 +29,8 @@ function AppRouter() {
             <Route path="/promise" element={<PromiseSample />} />
             <Route path="/username-input" element={<UsernameInput />} />
             <Route path="/counter-non-functional" element={<CounterNonFunctional />} />
-            <Route path="/use-transition" element={<UseTransitionExample />} />
-            <Route path="/use-transition-without" element={<UseTransitionExampleWithoutTransition />} />
-            <Route path="/use-transition-react" element={<UseTransactionReact />} />
+            <Route path="/use-transition" element={<UseTransactionReact />} />
+            <Route path="/use-transition-without" element={<WithouUseTransitionReact />} />
         </Routes>
     )
 }

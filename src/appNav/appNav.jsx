@@ -15,8 +15,8 @@ export default function AppNav() {
             <NavLink to="/promise">Promise</NavLink>
             <NavLink to="/username-input">Username Input</NavLink>
             <NavLink to="/counter-non-functional">Counter Non-Functional</NavLink>
-            <NavLink to="/use-transition">Use Transition</NavLink>
-            <NavLink to="/use-transition-without">Without Transition</NavLink>
+            <NavLink to="/use-transition">With UseTransition</NavLink>
+            <NavLink to="/use-transition-without">Without UseTransition</NavLink>
             <NavLink to="/use-transition-react">Use Transition React</NavLink>
         </nav>
     )
