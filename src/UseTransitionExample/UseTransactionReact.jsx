@@ -1,15 +1,10 @@
 import { useState, useTransition } from "react";
 import { startTransition } from "react";
 
-
-import { useState, useTransition } from "react";
-import { updateQuantity } from "./api";
-import Item from "./Item";
-import Total from "./Total";
-
 export default function App({}) {
   const [quantity, setQuantity] = useState(1);
   const [isPending, startTransition] = useTransition();
+  const [isLoading, setIsLoading] = useState(false);
 
   const updateQuantityAction = async newQuantity => {
     // To access the pending state of a transition,
@@ -22,17 +17,27 @@ export default function App({}) {
     });
   };
 
+  // New function that updates quantity without useTransition
+  const updateQuantityWithoutTransition = async (newQuantity) => {
+    setIsLoading(true);
+    try {
+      const savedQuantity = await updateQuantity(newQuantity);
+      setQuantity(savedQuantity);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div>
       <h1>Checkout</h1>
       <Item action={updateQuantityAction}/>
+      {/* <Item action={updateQuantityWithoutTransition}/> */}
       <hr />
-      <Total quantity={quantity} isPending={isPending} />
+      <Total quantity={quantity} isPending={isPending || isLoading} />
     </div>
   );
 }
-
-
 function Item({action}) {
     function handleChange(event) {
       // To expose an action prop, await the callback in startTransition.
@@ -79,3 +84,4 @@ function Total({quantity, isPending}) {
       }, 5000);
     });
   }
+
