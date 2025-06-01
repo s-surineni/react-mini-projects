@@ -31,33 +31,38 @@ export default function App({}) {
   return (
     <div>
       <h1>Checkout</h1>
-      <Item action={updateQuantityAction}/>
-      {/* <Item action={updateQuantityWithoutTransition}/> */}
+      {/* <Item action={updateQuantityAction}/> */}
+      <Item action={updateQuantityWithoutTransition}/>
       <hr />
       <Total quantity={quantity} isPending={isPending || isLoading} />
     </div>
   );
 }
 function Item({action}) {
-    function handleChange(event) {
-      // To expose an action prop, await the callback in startTransition.
-      startTransition(async () => {
-        await action(event.target.value);
-      })
-    }
-    return (
-      <div className="item">
-        <span>Eras Tour Tickets</span>
-        <label htmlFor="name">Quantity: </label>
-        <input
-          type="number"
-          onChange={handleChange}
-          defaultValue={1}
-          min={1}
-        />
-      </div>
-    )
+  function handleChange(event) {
+    action(event.target.value);
   }
+
+  // function handleChange(event) {
+  //   // To expose an action prop, await the callback in startTransition.
+  //   startTransition(async () => {
+  //     await action(event.target.value);
+  //   })
+  // }
+  
+  return (
+    <div className="item">
+      <span>Eras Tour Tickets</span>
+      <label htmlFor="name">Quantity: </label>
+      <input
+        type="number"
+        onChange={handleChange}
+        defaultValue={1}
+        min={1}
+      />
+    </div>
+  )
+}
   
 
   const intl = new Intl.NumberFormat("en-US", {
