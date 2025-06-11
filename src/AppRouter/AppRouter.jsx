@@ -11,6 +11,7 @@ import UseMemoSample from '../UseMemoSample/UseMemoSample'
 import PromiseSample from '../PromiseSample/PromiseSample'
 import UsernameInput from '../components/UsernameInput'
 import CounterNonFunctional from '../components/CounterNonFunctional'
+import UseCallbackExample from '../UseCallbackExample/UseCallbackExample'
 
 function AppRouter() {
     return (
@@ -26,6 +27,7 @@ function AppRouter() {
                 <Route path="/render-order" element={<RenderOrder />} />
                 <Route path="/use-memo" element={<UseMemoSample />} />
                 <Route path="/promise" element={<PromiseSample />} />
+                <Route path="/use-callback" element={<UseCallbackExample />} />
                 <Route path="/username-input" element={<UsernameInput />} />
                 <Route path="/counter-non-functional" element={<CounterNonFunctional />} />
             </Routes>
