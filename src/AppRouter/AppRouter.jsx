@@ -11,26 +11,29 @@ import UseMemoSample from '../UseMemoSample/UseMemoSample'
 import PromiseSample from '../PromiseSample/PromiseSample'
 import UsernameInput from '../components/UsernameInput'
 import CounterNonFunctional from '../components/CounterNonFunctional'
+import UseTransactionReact from '../UseTransitionExample/UseTransactionReact'
+import WithouUseTransitionReact from '../UseTransitionExample/WithouUseTransitionReact'
 import UseCallbackExample from '../UseCallbackExample/UseCallbackExample'
 
 function AppRouter() {
     return (
-        
-            <Routes>
-                <Route path="/refresh" element={<RefreshInterval />} />
-                <Route path="/employee" element={<Employee />} />
-                <Route path="/accordion" element={<Accordion />} />
-                <Route path="/login1" element={<Login1 />} />
-                <Route path="/progressbar2" element={<ProgressBarSample2 />} />
-                <Route path="/progressbar" element={<ProgressBarSample />} />
-                <Route path="/fileSystem" element={<FileSystem />} />
-                <Route path="/render-order" element={<RenderOrder />} />
-                <Route path="/use-memo" element={<UseMemoSample />} />
-                <Route path="/promise" element={<PromiseSample />} />
-                <Route path="/use-callback" element={<UseCallbackExample />} />
-                <Route path="/username-input" element={<UsernameInput />} />
-                <Route path="/counter-non-functional" element={<CounterNonFunctional />} />
-            </Routes>
+        <Routes>
+            <Route path="/refresh" element={<RefreshInterval />} />
+            <Route path="/employee" element={<Employee />} />
+            <Route path="/accordion" element={<Accordion />} />
+            <Route path="/login1" element={<Login1 />} />
+            <Route path="/progressbar2" element={<ProgressBarSample2 />} />
+            <Route path="/progressbar" element={<ProgressBarSample />} />
+            <Route path="/fileSystem" element={<FileSystem />} />
+            <Route path="/render-order" element={<RenderOrder />} />
+            <Route path="/use-memo" element={<UseMemoSample />} />
+            <Route path="/promise" element={<PromiseSample />} />
+            <Route path="/username-input" element={<UsernameInput />} />
+            <Route path="/counter-non-functional" element={<CounterNonFunctional />} />
+            <Route path="/use-transition" element={<UseTransactionReact />} />
+            <Route path="/use-transition-without" element={<WithouUseTransitionReact />} />
+            <Route path="/use-callback" element={<UseCallbackExample />} />
+        </Routes>
     )
 }
 

@@ -18,6 +18,9 @@ export default function AppNav() {
                 <NavLink to="/use-callback" className="nav-link">Use Callback</NavLink>
                 <NavLink to="/username-input" className="nav-link">Username Input</NavLink>
                 <NavLink to="/counter-non-functional" className="nav-link">Counter Non-Functional</NavLink>
+            <NavLink to="/use-transition">With UseTransition</NavLink>
+            <NavLink to="/use-transition-without">Without UseTransition</NavLink>
+            <NavLink to="/use-transition-react">Use Transition React</NavLink>
             </div>
         </nav>
     )
