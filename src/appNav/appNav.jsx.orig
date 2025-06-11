@@ -3,6 +3,7 @@ import "./appNav.css";
 
 export default function AppNav() {
     return (
+<<<<<<< HEAD
         <nav className="app-nav">
             <div className="nav-container">
                 <NavLink to="/refresh" className="nav-link">Refresh</NavLink>
@@ -18,11 +19,25 @@ export default function AppNav() {
                 <NavLink to="/use-callback" className="nav-link">Use Callback</NavLink>
                 <NavLink to="/username-input" className="nav-link">Username Input</NavLink>
                 <NavLink to="/counter-non-functional" className="nav-link">Counter Non-Functional</NavLink>
+            </div>
+=======
+        <nav>
+            <NavLink to="/refresh">Refresh</NavLink>
+            <NavLink to="/employee">Employee</NavLink>
+            <NavLink to="/accordion">Accordion</NavLink>
+            <NavLink to="/login1">Login1</NavLink>
+            <NavLink to="/progressbar2">Progressbar2</NavLink>
+            <NavLink to="/progressbar">Progressbar</NavLink>
+            <NavLink to="/fileSystem">FileSystem</NavLink>
+            <NavLink to="/render-order">Render Order</NavLink>
+            <NavLink to="/use-memo">Use Memo</NavLink>
+            <NavLink to="/promise">Promise</NavLink>
+            <NavLink to="/username-input">Username Input</NavLink>
+            <NavLink to="/counter-non-functional">Counter Non-Functional</NavLink>
             <NavLink to="/use-transition">With UseTransition</NavLink>
             <NavLink to="/use-transition-without">Without UseTransition</NavLink>
             <NavLink to="/use-transition-react">Use Transition React</NavLink>
-            <NavLink to="/folder-manager" className="nav-link">Folder Manager</NavLink>
-            </div>
+>>>>>>> d3faea2b773bc03f384183e3cc4b0e3cbf357aa0
         </nav>
     )
 }
