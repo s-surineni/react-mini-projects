@@ -306,7 +306,7 @@ export default function FolderStructureManager() {
             onChange={(e) => setNewFilePath(e.target.value)}
             placeholder={selectedFolderPath ? `Enter filename (creating in: ${selectedFolderPath})` : "Enter file path (e.g., /src/components/NewComponent.jsx)"}
             className="file-input"
-            onKeyPress={(e) => e.key === 'Enter' && createFile()}
+            onKeyDown={(e) => e.key === 'Enter' && createFile()}
           />
           <button onClick={createFile} className="create-btn">
             Create File

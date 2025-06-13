@@ -15,6 +15,7 @@ import UseTransactionReact from '../UseTransitionExample/UseTransactionReact'
 import WithouUseTransitionReact from '../UseTransitionExample/WithouUseTransitionReact'
 import UseCallbackExample from '../UseCallbackExample/UseCallbackExample'
 import FolderStructureManager from '../components/FolderStructureManager'
+import FileSystem2 from '../FileSystem2/FileSystem2'
 
 function AppRouter() {
     return (
@@ -35,6 +36,8 @@ function AppRouter() {
             <Route path="/use-transition-without" element={<WithouUseTransitionReact />} />
             <Route path="/use-callback" element={<UseCallbackExample />} />
             <Route path="/folder-manager" element={<FolderStructureManager />} />
+            <Route path="/file-system2" element={<FileSystem2 />} />
+
         </Routes>
     )
 }
