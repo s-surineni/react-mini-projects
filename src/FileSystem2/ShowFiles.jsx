@@ -7,17 +7,17 @@ function ShowFiles({ files }) {
         })
         return children;
     }
-    function renderFile(file) {
+    function renderFile(file, depth) {
         let res = [];
 
         if (file.type === "directory") {
-            res.push(<FolderComp name={file.name} />);
+            res.push(<div style={{ marginLeft: `${depth}px` }}><FolderComp name={file.name} /></div>);
             const children = findChildren(file.id);
             for (const aChild of children) {
-                res = res.concat(renderFile(aChild));
+                res = res.concat(renderFile(aChild, depth + 16));
             }
         } else {
-            res.push(<FileComp name={file.name} />)
+            res.push(<div style={{ marginLeft: `${depth}px` }}><FileComp style={{ marginLeft: `${depth}px` }} name={file.name} /></div>)
         }
         return res
     }
@@ -30,7 +30,7 @@ function ShowFiles({ files }) {
     return (<>
         {files.map(afile => {
             // console.log(afile)
-            if (!("parentId" in afile)) { return renderFile(afile) }
+            if (!("parentId" in afile)) { return renderFile(afile, 0) }
         })}
 
     </>)
