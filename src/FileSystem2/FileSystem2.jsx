@@ -63,12 +63,8 @@ const folderStructure = [
 function FileSystem2() {
     // rearrange data to find children in parent
     // children will be list of ids
-    return (<>
-        {folderStructure.map(afile => {
-            // console.log(afile)
-            if (!("parentId" in afile)) { return <ShowFiles file={afile} /> }
-        })}
 
-    </>)
+    return <ShowFiles files={folderStructure} />
+
 }
 export default FileSystem2;
