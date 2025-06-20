@@ -16,6 +16,7 @@ import WithouUseTransitionReact from '../UseTransitionExample/WithouUseTransitio
 import UseCallbackExample from '../UseCallbackExample/UseCallbackExample'
 import FolderStructureManager from '../components/FolderStructureManager'
 import FileSystem2 from '../FileSystem2/FileSystem2'
+import StopWatch from '../components/StopWatch/StopWatch'
 
 function AppRouter() {
     return (
@@ -37,6 +38,7 @@ function AppRouter() {
             <Route path="/use-callback" element={<UseCallbackExample />} />
             <Route path="/folder-manager" element={<FolderStructureManager />} />
             <Route path="/file-system2" element={<FileSystem2 />} />
+            <Route path="/stopwatch" element={<StopWatch />} />
 
         </Routes>
     )

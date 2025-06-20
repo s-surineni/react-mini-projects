@@ -23,6 +23,7 @@ export default function AppNav() {
             <NavLink to="/use-transition-react">Use Transition React</NavLink>
             <NavLink to="/folder-manager" className="nav-link">Folder Manager</NavLink>
             <NavLink to="/file-system2" className="nav-link">Folder Manager2</NavLink>
+            <NavLink to="/stopwatch" className="nav-link">Stopwatch</NavLink>
 
             </div>
         </nav>
